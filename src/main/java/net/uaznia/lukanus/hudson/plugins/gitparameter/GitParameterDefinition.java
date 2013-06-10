@@ -262,9 +262,13 @@ public class GitParameterDefinition
 
                     for (hudson.plugins.git.Branch gitBranch : newgit.getBranches()) {
                         String branchName = gitBranch.getName();
-
-                        if ("master".equals(branchName)) {
-                            continue;
+                        
+                        // Split branch names up by posix seperator,
+                        // then use the last portion. I.E. remotes/origin/master
+                        // becomes simply master.
+                        String[] toks = branchName.split("/", 3);
+                        if ( toks.length > 0 ) {
+                            branchName = toks[toks.length - 1];
                         }
 
                         branchMap.put(branchName, branchName);
