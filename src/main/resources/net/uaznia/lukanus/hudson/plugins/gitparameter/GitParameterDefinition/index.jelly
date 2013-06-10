@@ -9,7 +9,7 @@
       <j:choose>
         <j:when test="${it.type eq 'PT_BRANCH'}">
           <input type="hidden" name="name" value="${it.name}" />
-          <select name="value" size="20" width="600px">
+          <select name="value" width="600px">
             <j:forEach var="val" items="${it.branchMap}">
               <j:choose>
                 <option value="${val.key}">${val.value}</option>
