@@ -297,9 +297,7 @@ public class GitParameterDefinition
     }
 
     public Map<String, String> getBranchMap() {
-        if (branchMap == null || branchMap.isEmpty()) {
-            generateContents(PARAMETER_TYPE_BRANCH);
-        }
+        generateContents(PARAMETER_TYPE_BRANCH);
         return branchMap;
     }
 }
