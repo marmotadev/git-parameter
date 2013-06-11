@@ -211,7 +211,13 @@ public class GitParameterDefinition
 
         for (RemoteConfig repository : git.getRepositories()) {
             for (URIish remoteURL : repository.getURIs()) {
-                IGitAPI newgit = new GitAPI(defaultGitExe,
+                // It would be better to use IGitAPI here, but getBranches is 
+                // not defined on the interface. It might be worthwhile to submit
+                // a patch against the git-client repo to revive it. That would 
+                // be preferable to targeting an earlier version of the git
+                // plugin that target an earlier version of git-client that
+                // include getBranches on IGitAPI. (thomasvandoren, 2013-06-10)
+                GitAPI newgit = new GitAPI(defaultGitExe,
                         project.getSomeWorkspace(), TaskListener.NULL,
                         environment, new String());
 
