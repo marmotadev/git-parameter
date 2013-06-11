@@ -264,7 +264,7 @@ public class GitParameterDefinition
                     }
                 }
                 else if (type.equalsIgnoreCase(PARAMETER_TYPE_BRANCH)) {
-                    branchMap = new HashMap<String, String>();
+                    branchMap = new TreeMap<String, String>();
 
                     for (hudson.plugins.git.Branch gitBranch : newgit.getBranches()) {
                         String branchName = gitBranch.getName();
