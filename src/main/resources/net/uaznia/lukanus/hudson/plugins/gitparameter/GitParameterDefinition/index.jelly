@@ -12,7 +12,12 @@
           <select name="value" width="600px">
             <j:forEach var="val" items="${it.branchMap}">
               <j:choose>
-                <option value="${val.key}">${val.value}</option>
+                <j:when test="${val.key eq it.defaultValue}">
+                  <option value="${val.key}" selected="selected">${val.value}</option>
+                </j:when>
+                <j:otherwise>
+                  <option value="${val.key}">${val.value}</option>
+                </j:otherwise>
               </j:choose>
             </j:forEach>
           </select>
