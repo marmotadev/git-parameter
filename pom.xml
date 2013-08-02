@@ -3,8 +3,7 @@
   <parent>
     <groupId>org.jenkins-ci.plugins</groupId>
     <artifactId>plugin</artifactId>
-    <version>1.451</version><!-- which version of Hudson is this plugin built against? -->
-    <relativePath>../pom.xml</relativePath>
+    <version>1.525</version><!-- which version of Hudson is this plugin built against? -->
   </parent>
 
   <groupId>org.jenkins-ci.plugins</groupId>
@@ -58,7 +57,12 @@
   <properties>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
-  </properties>
+  <!--
+    explicitly specifying the latest version here because one we get from the parent POM
+    tends to lag behind a bit
+  -->
+<!--   <maven-hpi-plugin.version>1.95</maven-hpi-plugin.version> -->
+</properties>
   <developers>
       <developer>
         <id>lukanus</id>
@@ -68,11 +72,11 @@
   
 
   <repositories>
-    <repository>
-      <id>jgit-repository</id>
-      <name>Eclipse JGit Repository</name>
-      <url>http://download.eclipse.org/jgit/maven</url>
-    </repository>
+<!--     <repository> -->
+<!--       <id>jgit-repository</id> -->
+<!--       <name>Eclipse JGit Repository</name> -->
+<!--       <url>http://download.eclipse.org/jgit/maven</url> -->
+<!--     </repository> -->
     
     <repository>
       <id>guice-maven</id>
@@ -90,6 +94,11 @@
       <url>http://repo.jenkins-ci.org/public/</url>
     </repository>
     
+     <repository>
+    <id>jenkins-releases</id>
+    <url>http://repo.jenkins-ci.org/releases/</url>
+  </repository>
+    
   </repositories>
   
   <pluginRepositories>
@@ -101,23 +110,33 @@
   
     <dependencies>
         <dependency>
-            <groupId>org.jenkinsci.plugins</groupId>
+            <groupId>org.jenkins-ci.plugins</groupId>
             <artifactId>git</artifactId>
-            <version>1.1.15</version>
+            <version>1.4.0</version>
             <type>jar</type>
+<!--             <exclusions> -->
+<!--             	<exclusion> -->
+<!--             		<artifactId>git-client</artifactId> -->
+<!--             		<groupId>org.jenkins-ci.plugins</groupId> -->
+<!--             	</exclusion> -->
+<!--             </exclusions> -->
         </dependency>
-        <dependency>
-            <groupId>org.spearce</groupId>
-            <artifactId>jgit</artifactId>
-            <version>0.4-47e4af3</version>
-            <type>jar</type>
-        </dependency>
-        <dependency>
-            <groupId>org.jenkins-ci.main</groupId>
-            <artifactId>jenkins-core</artifactId>
-            <version>1.451</version>
-            <type>jar</type>
-        </dependency>
+<!--         <dependency> -->
+<!--             <groupId>org.spearce</groupId> -->
+<!--             <artifactId>jgit</artifactId> -->
+<!--             <version>3.0.0.201306101825-r</version> -->
+<!--         </dependency> -->
+<!--  <dependency> -->
+<!--       <groupId>org.eclipse.jgit</groupId> -->
+<!--       <artifactId>org.eclipse.jgit</artifactId> -->
+<!--       <version>3.0.0.201306101825-r</version> -->
+<!--     </dependency> -->
+<!--         <dependency> -->
+<!--             <groupId>org.jenkins-ci.main</groupId> -->
+<!--             <artifactId>jenkins-core</artifactId> -->
+<!--             <version>1.451</version> -->
+<!--             <type>jar</type> -->
+<!--         </dependency> -->
         <dependency>
             <groupId>org.mockito</groupId>
             <artifactId>mockito-core</artifactId>

@@ -1,10 +1,8 @@
 package net.uaznia.lukanus.hudson.plugins.gitparameter;
 
-import hudson.EnvVars;
-import hudson.model.AbstractBuild;
-import org.kohsuke.stapler.DataBoundConstructor;
-
 import hudson.model.StringParameterValue;
+
+import org.kohsuke.stapler.DataBoundConstructor;
 
 public class GitParameterValue extends StringParameterValue {
         private static final long serialVersionUID = -8244244942726975701L;
