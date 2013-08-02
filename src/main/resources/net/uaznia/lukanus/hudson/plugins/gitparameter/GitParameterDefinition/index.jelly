@@ -27,6 +27,22 @@
                         </j:forEach>  
                     </select>
             	</j:when>
+            	<j:when test="${it.type eq 'PT_BRANCH'}">
+            	    <input type="hidden" name="name" value="${it.name}" />
+            	      <j:set var="defselSize" value="2"/>
+            	      <j:set var="selSize" value="${defselSize}"/>
+			            <j:if test="${it.branchMap.size() &lt; defselSize}">
+			              <j:set var="selSize" value="${it.branchMap.size()}"/>
+			            </j:if>
+            
+                    <select name="value" size="${selSize}" style="width:auto;">
+            		<j:forEach var="val" items="${it.branchMap}" >
+                            <j:choose>
+                                <option value="${val.key}">${val.value}</option>
+                            </j:choose>
+                        </j:forEach>  
+                    </select>
+            	</j:when>
             </j:choose>	
         </div>
 	</f:entry>
