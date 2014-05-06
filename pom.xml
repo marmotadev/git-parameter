@@ -11,7 +11,7 @@
   <packaging>hpi</packaging>
   <version>0.3-SNAPSHOT</version>
   <name>Git Parameter Plug-In</name>
-  <url>https://github.com/lukanus/git-parameter</url>
+  <url>https://github.com/marmotadev/git-parameter</url>
 
 <dependencyManagement>
  <dependencies>
@@ -59,6 +59,10 @@
     <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
   </properties>
   <developers>
+  <developer>
+        <id>jbelickas</id>
+        <name>Jaunius Belickas</name>
+      </developer>
       <developer>
         <id>lukanus</id>
         <name>Łukasz Miłkowski</name>
