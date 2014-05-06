@@ -265,17 +265,16 @@ public class GitParameterDefinition
                 }
                 else if (type.equalsIgnoreCase(PARAMETER_TYPE_BRANCH)) {
                     branchMap = new TreeMap<String, String>();
-
+                    
                     for (hudson.plugins.git.Branch gitBranch : newgit.getRemoteBranches()) {
                         String branchName = gitBranch.getName();
-                        
                         // Split branch names up by posix seperator,
                         // then use the last portion. I.E. remotes/origin/master
                         // becomes simply master.
-                        String[] toks = branchName.split("/", 3);
-                        if ( toks.length > 0 ) {
-                            branchName = toks[toks.length - 1];
-                        }
+//                        String[] toks = branchName.split("/", 3);
+//                        if ( toks.length > 0 ) {
+//                            branchName = toks[toks.length - 1];
+//                        }
 
                         branchMap.put(branchName, branchName);
                     }

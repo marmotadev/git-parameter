@@ -3,7 +3,7 @@
   <parent>
     <groupId>org.jenkins-ci.plugins</groupId>
     <artifactId>plugin</artifactId>
-    <version>1.464</version><!-- which version of Hudson is this plugin built against? -->
+    <version>1.554.1</version><!-- which version of Hudson is this plugin built against? -->
   </parent>
 
   <groupId>org.jenkins-ci.plugins</groupId>
@@ -13,6 +13,11 @@
   <name>Git Parameter Plug-In</name>
   <url>https://github.com/lukanus/git-parameter</url>
 
+<dependencyManagement>
+ <dependencies>
+ 	
+ </dependencies>
+</dependencyManagement>
   <build>
     <pluginManagement>
       <plugins>
@@ -101,7 +106,7 @@
         <dependency>
             <groupId>org.jenkins-ci.plugins</groupId>
             <artifactId>git</artifactId>
-            <version>1.4.0</version>
+            <version>2.2.0</version>
             <type>jar</type>
         </dependency>
         <dependency>
@@ -112,7 +117,7 @@
         <dependency>
             <groupId>org.jenkins-ci.main</groupId>
             <artifactId>jenkins-core</artifactId>
-            <version>1.464</version>
+            <version>1.554.1</version>
             <type>jar</type>
         </dependency>
         <dependency>
